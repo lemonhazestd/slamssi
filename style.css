@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Grandstander:ital,wght@0,100..900;1,100..900&family=Indie+Flower&display=swap');
+
+
+/* Reset básico */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: linear-gradient(to right, #a1ffff, #f3c6ff, #7fbfff);
+}
+
+/* Sidebar fija */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: #1e1e2f;
+    color: #ffccf9;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: left 0.3s ease;
+    z-index: 999;
+}
+
+/* Logo */
+.logo {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+/* Menú */
+.menu {
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.menu li {
+    font-family: "Crafty Girls", cursive;
+    color: #ffccf9;
+    margin: 15px 0;
+}
+
+.menu a {
+    color: #ffccf9;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    transition: background 0.5s ease;
+}
+
+.menu a:hover {
+    background-color: #0c0c0c;
+    border-radius: 5px;
+}
+
+/* Contenido principal */
+.content {
+    margin-left: 280px;
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#bienvenida {
+    font-family: "Grandstander", cursive;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    text-align: center;
+}
+
+#proximo {
+    font-family: "Grandstander", cursive;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    text-align: center;
+}
+
+#flyerprox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fototitulo {
+    font-family: "Grandstander", cursive;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    text-align: center;
+}
+
+/* Botón hamburguesa oculto por defecto */
+.menu-toggle {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background-color: #1e1e2f;
+    color: #ffccf9;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    z-index: 1000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar {
+        left: -100%;
+        transition: left 0.3s ease;
+    }
+
+    .sidebar.active {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 20px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
